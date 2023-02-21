@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:ns0="http://purl.org/vocab/vann/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:ns1="http://www.w3.org/2003/06/sw-vocab-status/ns#">
+
+  <owl:Class rdf:about="http://purl.org/vocommons/voaf#Vocabulary">
+  </owl:Class>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+  </owl:AnnotationProperty>
+
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status">
+  </owl:AnnotationProperty>
+
+  <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+  </owl:DatatypeProperty>
+
+  <rdf:Description rdf:about="https://w3id.org/platoon/EnergyMarketOntology">
+    <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:title xml:lang="en">Platoon energy market ontology</dc:title>
+    <dc:description xml:lang="en">Links the platoon energy market vocabulary for the  Platoon  project.</dc:description>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-30</dc:issued>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-02-16</dc:modified>
+    <dc:creator>Sarra BEN ABBES and Lynda TEMAL and Oumy SEYE</dc:creator>
+    <dc:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
+    <ns0:preferredNamespacePrefix>plt</ns0:preferredNamespacePrefix>
+    <ns0:preferredNamespaceUri rdf:resource="https://w3id.org/platoon/"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/platoon/EnergyMarketOntology-1.1"/>
+    <owl:imports rdf:resource="https://w3id.org/seas/PricePropertyOntology"/>
+    <owl:imports rdf:resource="https://w3id.org/seas/OfferingOntology"/>
+    <owl:imports rdf:resource="https://w3id.org/seas/ElectricPowerSystemOntology"/>
+    <owl:imports rdf:resource="https://w3id.org/platoon/EnergyMeasureOntology"/>
+    <owl:imports rdf:resource="http://www.iec.ch/TC57/CIM#"/>
+    <owl:versionInfo>v1.1</owl:versionInfo>
+  </rdf:Description>
+
+  <owl:Class rdf:about="https://w3id.org/platoon/GasContract">
+    <rdfs:label xml:lang="en">Gas Contract </rdfs:label>
+    <rdfs:comment xml:lang="en">Gas Contract is contract to supply a quantity of gas over a period of time</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Contract"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/saref#isAbout"/>
+        <owl:someValuesFrom rdf:resource="https://w3id.org/platoon/GasEnergyProperty"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/platoon/ElectricityContract">
+    <rdfs:label xml:lang="en">Electricity Contract </rdfs:label>
+    <rdfs:comment xml:lang="en">A Electricity contract is a contract between two parties, one which generates electricity (the seller) and one which is looking to purchase electricity (the buyer)(source wikipedia)</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Contract"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/saref#isAbout"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="https://w3id.org/seas/ElectricEnergyProperty">
+          </owl:Class>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/platoon/hasRegisteredResource">
+    <rdfs:label xml:lang="en">has registered resource</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the feature of interest to its  registered resource.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/seas/frequency"/>
+    <rdfs:domain rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <rdfs:range rdf:resource="http://ontology.tno.nl/cerise/cim-profile#RegisteredResource"/>
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/platoon/isRegisteredOn">
+    <rdfs:label xml:lang="en">is registered on</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the registered resource to its  register , such as energy market.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://ontology.tno.nl/cerise/cim-profile#RegisteredResource"/>
+    <rdfs:range rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/platoon/hasCapacity">
+    <rdfs:label xml:lang="en">is capacity</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the feature of interest to its capacity.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <rdfs:range rdf:resource="http://ontology.tno.nl/cerise/cim-profile#ResourceCapacity"/>
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/platoon/offeredTo">
+    <rdfs:label xml:lang="en">offred to</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the feature of interest to its  receiver.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <rdfs:range rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/platoon/offeredBy">
+    <rdfs:label xml:lang="en">offered by</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the feature of interest to its  offerer.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <rdfs:range rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://w3id.org/platoon/operates">
+    <rdfs:label xml:lang="en">operates</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the feature of interest to its control area  operator .</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <rdfs:range>
+      <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#ControlAreaOperator">
+      </owl:Class>
+    </rdfs:range>
+
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://w3id.org/platoon/hasContractOperationDate">
+    <rdfs:label xml:lang="en">has contract operation  date</rdfs:label>
+    <rdfs:comment xml:lang="en">Links the feature of interest to its  constract operation date.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/seas/FeatureOfInterest"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <ns1:term_status>testing</ns1:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/platoon/EnergyMarketOntology"/>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://w3id.org/seas/Contract">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#EnergyMarket">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#Energy">
+  </owl:Class>
+
+  <owl:Class rdf:about="https://w3id.org/seas/SolarPanel">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#Organization">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#MktOrganization">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#MarketParticipant">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#SchedulingCoordinator">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#MktLoadArea">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#LoadArea">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#Bid">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#ControlAreaGeneratingUnit">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#GeneratingUnit">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#SolarGeneratingUnit">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#RegisteredLoad">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.tno.nl/cerise/cim-profile#RegisteredResource">
+  </owl:Class>
+
+</rdf:RDF>
